@@ -89,7 +89,7 @@ def createFile():
                 <div class="col-md-8 offset-md-2">
                     <div class="header-text caption">
                     <h2 style=>Bienvenido al curso de</h2>
-                    <h1 style="color: white; font-size:120px; font-style: italic; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-transform:uppercase">""" + Curso[0] + """</h1>
+                    <h1 style="color: white; font-size:120px; text-align: center; font-style: italic; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-transform:uppercase">""" + Curso[0] + """</h1>
                     </div>
                 </div>
                 </div>
@@ -364,7 +364,7 @@ def printAlumns():
     print("Total de alumnos en el curso: " + str(len(alumns)))
     print("Alumnos en el curso: ")
     for estudiante in alumns:
-        print("Nombre = " + estudiante.alumn + ", Nota = " + estudiante.grade)
+        print("Nombre = " + estudiante.alumn + ", Nota = " + str(estudiante.grade))
     print("\n")
 
     # Parameters functions
@@ -372,14 +372,14 @@ def printAlumns():
         if parameter == "ASC":
             print("Notas ordenadas de forma ascendente: ")
             for alumnito in ascarray:
-                print("Nota: " + alumnito.grade +
+                print("Nota: " + str(alumnito.grade) +
                       ", Nombre: " + alumnito.alumn)
             print("\n")
 
         if parameter == "DESC":
             print("Notas ordenadas de forma descendente: ")
             for alumnito2 in descarray:
-                print("Nota: " + alumnito2.grade +
+                print("Nota: " + str(alumnito2.grade) +
                       ", Nombre: " + alumnito2.alumn)
             print("\n")
 
@@ -445,7 +445,8 @@ def read(path):
                     text6 = text5.replace(";", " ")
                     alumn = text6.strip()
                     grade = text4[1].strip()
-                    tempAlumn1 = saveAlumn(alumn, grade)
+                    upgrade = int(str(grade))
+                    tempAlumn1 = saveAlumn(alumn, upgrade)
                     alumns.append(tempAlumn1)
                 """
                 else:
