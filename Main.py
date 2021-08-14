@@ -402,6 +402,22 @@ def printAlumns():
 
 def read(path):
     try:
+        global parameters
+        parameters = []
+        global ascarray
+        ascarray = []
+        global descarray
+        descarray = []
+        global minalumn
+        minalumn = []
+        global maxalumn
+        maxalumn = []
+        global numaproved
+        numaproved = []
+        global numreproved
+        numreproved = []
+        global prom
+        prom = []
         with open(path, 'r') as f:
             format = path.find(".lfp")
             if format:
@@ -486,13 +502,13 @@ def read(path):
                 for parameter in parameters:
                     if parameter == "ASC":
                         #print("ASC Encontrado")
-                        global ascarray
+                        #global ascarray
                         ascarray += alumns
                         quickSort(ascarray, 0, len(ascarray) - 1, lambda x, y: x.grade > y.grade)
 
                     if parameter == "DESC":
                         #print("DESC Encontrado")
-                        global descarray
+                        #global descarray
                         descarray += alumns
                         quickSort(descarray, 0, len(descarray) - 1, lambda x, y: x.grade < y.grade)
 
